@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { classToClass } from 'class-transformer';
 import CreatePetService from '@modules/pets/services/CreatePetService';
 import DeletePetService from '@modules/pets/services/DeletePetService';
 import ListPetsService from '@modules/pets/services/ListPetsService';
@@ -43,7 +44,7 @@ export default class PetsController {
       pet_id,
     });
 
-    return response.json(pet);
+    return response.json(classToClass(pet));
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
