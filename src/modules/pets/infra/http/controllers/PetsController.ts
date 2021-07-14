@@ -72,6 +72,6 @@ export default class PetsController {
 
     const pet = await showPet.execute({ id });
 
-    return response.json(pet);
+    return response.json(classToClass(pet));
   }
 }
