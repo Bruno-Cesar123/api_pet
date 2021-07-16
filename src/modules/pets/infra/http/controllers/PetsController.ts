@@ -20,7 +20,7 @@ export default class PetsController {
       description,
     });
 
-    return response.json(pet);
+    return response.json(classToClass(pet));
   }
 
   public async delete(request: Request, response: Response): Promise<Response> {
